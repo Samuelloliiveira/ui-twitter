@@ -5,6 +5,12 @@ import { Sidebar } from './components/Sidebar'
 import { Header } from './components/Header'
 import { Separator } from './components/Separator'
 
+const tweets = [
+  'Meu primeiro tweet',
+  'Zeri e Irelia são as maiores',
+  'Vamos INTZ, volta a ganhar'
+]
+
 export function App() {
   return (
     <div className="m-auto max-w-[1000rem] grid grid-cols-[300px,1fr]">
@@ -37,12 +43,17 @@ export function App() {
 
           <Separator />
 
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
+          {tweets.map(tweet => {
+            return <Tweet
+              key={tweet}
+              content={tweet}
+            />
+          })}
         </main>
       </div>
     </div >
   )
 }
+
+// forEach -> Não tem retorno
+// map -> Tem retorno
