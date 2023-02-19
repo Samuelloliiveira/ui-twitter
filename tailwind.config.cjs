@@ -14,6 +14,7 @@ module.exports = {
         'white-tweet': '#e1e1e6',
         'gray-primary': '#828282',
         'gray-secondary': '#2F2F2F',
+        'gray-tertiary': '#202020',
         'blue-primary': '#1DA1F2',
       }
     },
