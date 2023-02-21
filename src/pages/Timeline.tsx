@@ -8,7 +8,11 @@ export function Timeline() {
   const [tweets, setTweets] = useState([
     'Meu primeiro tweet',
     'Zeri e Irelia são as maiores',
-    'Vamos INTZ, volta a ganhar'
+    'Vamos INTZ, volta a ganhar',
+    'Bem que poderia chover o resto da semana',
+    'Estudando o dia praticamente todo',
+    'Essa aplicação está ficnado massa',
+    'Quero conseguir logo minha primeira oportunidade na área'
   ])
 
   function createNewTweet(event: FormEvent) {
@@ -49,7 +53,7 @@ export function Timeline() {
         </label>
         <button
           type="submit"
-          className="ml-auto bg-blue-primary rounded-full py-3 px-6 text-white text-base font-black border-0 hover:brightness-90"
+          className="ml-auto bg-blue-primary rounded-full py-3 px-6 text-white font-black border-0 hover:brightness-90"
         >
           Tweet
         </button>

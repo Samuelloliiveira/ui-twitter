@@ -1,3 +1,4 @@
+import { PaperPlaneRight } from 'phosphor-react'
 import { FormEvent, KeyboardEvent, useState } from 'react'
 
 import { Header } from '../components/Header'
@@ -46,7 +47,7 @@ export function Status() {
           />
           <textarea
             placeholder="Tweete sua resposta"
-            className="bg-background flex-1 border-0 text-base font-medium mt-8 resize-none focus:outline-none placeholder:text-gray-primary"
+            className="bg-background flex-1 border-0 font-medium mt-8 resize-none focus:outline-none placeholder:text-gray-primary"
             value={newAnswer}
             onKeyDown={handleHotKeySubmit}
             onChange={(event) => setNewAnswer(event.target.value)}
@@ -54,9 +55,12 @@ export function Status() {
         </label>
         <button
           type="submit"
-          className="ml-auto bg-blue-primary rounded-full py-3 px-6 text-white text-base font-black border-0 hover:brightness-90"
+          className="ml-auto bg-blue-primary rounded-full py-3 px-6 text-white border-0 hover:brightness-90 max-md:p-3"
         >
-          Responder
+          <PaperPlaneRight size={25} className="md:hidden"/>
+          <span className="font-black max-md:hidden">
+            Responder
+          </span>
         </button>
       </form>
 
