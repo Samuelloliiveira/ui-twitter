@@ -73,5 +73,3 @@ export function Status() {
     </main>
   )
 }
-
-// auto grow textarea react

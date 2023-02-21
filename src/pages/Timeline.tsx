@@ -1,4 +1,5 @@
 import { FormEvent, KeyboardEvent, useState } from 'react'
+
 import { Header } from '../components/Header'
 import { Separator } from '../components/Separator'
 import { Tweet } from '../components/Tweet'
@@ -70,9 +71,3 @@ export function Timeline() {
     </main>
   )
 }
-
-// forEach -> Não tem retorno
-// map -> Tem retorno
-
-// Controlled Components -> conceito de anotar o valor enquanto o usuário digita
-// Imutabilidade -> Nunca alteramos informações no React, criamos novas versões da informação

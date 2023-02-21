@@ -108,5 +108,3 @@ export function Sidebar() {
     </aside >
   )
 }
-
-// Contexto -> Existe locais no React que conseguimos ter acessos a informações e em outros não.
