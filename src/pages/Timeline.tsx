@@ -1,19 +1,31 @@
-import { Header } from "../components/Header"
-import { Separator } from "../components/Separator"
-import { Tweet } from "../components/Tweet"
-
-const tweets = [
-  'Meu primeiro tweet',
-  'Zeri e Irelia são as maiores',
-  'Vamos INTZ, volta a ganhar'
-]
+import { FormEvent, useState } from 'react'
+import { Header } from '../components/Header'
+import { Separator } from '../components/Separator'
+import { Tweet } from '../components/Tweet'
 
 export function Timeline() {
+  const [newTweet, setNewTweet] = useState('')
+  const [tweets, setTweets] = useState([
+    'Meu primeiro tweet',
+    'Zeri e Irelia são as maiores',
+    'Vamos INTZ, volta a ganhar'
+  ])
+
+  function createNewTweet(event: FormEvent) {
+    event.preventDefault()
+
+    setTweets([newTweet, ...tweets])
+    setNewTweet('')
+  }
+
   return (
     <main>
       <Header title="Home" />
 
-      <form className="py-6 px-5 flex flex-col gap-2">
+      <form
+        className="py-6 px-5 flex flex-col gap-2"
+        onSubmit={createNewTweet}
+      >
         <label className="flex gap-3">
           <img
             src="https://avatars.githubusercontent.com/u/53087945?v=4|"
@@ -23,6 +35,8 @@ export function Timeline() {
           <textarea
             placeholder="O que está acontecendo?"
             className="bg-background flex-1 border-0 text-base font-medium mt-3 resize-none focus:outline-none placeholder:text-gray-primary"
+            value={newTweet}
+            onChange={(event) => { setNewTweet(event.target.value) }}
           />
         </label>
         <button
@@ -47,3 +61,6 @@ export function Timeline() {
 
 // forEach -> Não tem retorno
 // map -> Tem retorno
+
+// Controlled Components -> conceito de anotar o valor enquanto o usuário digita
+// Imutabilidade -> Nunca alteramos informações no React, criamos novas versões da informação

@@ -6,7 +6,7 @@ export function Default() {
     <div className="m-auto max-w-[1000rem] grid grid-cols-[300px,1fr]">
       <Sidebar />
 
-      <div className="border-l border-r border-gray-secondary">
+      <div className="">
         <Outlet />
       </div>
     </div >
