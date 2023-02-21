@@ -1,14 +1,31 @@
+import { FormEvent, KeyboardEvent, useState } from 'react'
+
 import { Header } from '../components/Header'
 import { Separator } from '../components/Separator'
 import { Tweet } from '../components/Tweet'
 
-const answers = [
-  'Concordo...',
-  'Olha, faz sentido!',
-  'Parabéns pelo progresso.'
-]
-
 export function Status() {
+  const [newAnswer, setNewAnswer] = useState('')
+  const [answers, setAnswers] = useState([
+    'Concordo...',
+    'Olha, faz sentido!',
+    'Parabéns pelo progresso.'
+  ])
+
+  function createNewAnswer(event: FormEvent) {
+    event.preventDefault()
+
+    setAnswers([newAnswer, ...answers])
+    setNewAnswer('')
+  }
+
+  function handleHotKeySubmit(event: KeyboardEvent) {
+    if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
+      setAnswers([newAnswer, ...answers])
+      setNewAnswer('')
+    }
+  }
+
   return (
     <main>
       <Header title="Tweet" />
@@ -17,7 +34,10 @@ export function Status() {
 
       <Separator />
 
-      <form className="py-6 px-5 flex items-center border-b border-gray-secondary gap-2">
+      <form
+        className="py-6 px-5 flex items-center border-b border-gray-secondary gap-2"
+        onSubmit={createNewAnswer}
+      >
         <label className="flex flex-1 items-center gap-3">
           <img
             src="https://avatars.githubusercontent.com/u/53087945?v=4|"
@@ -27,6 +47,9 @@ export function Status() {
           <textarea
             placeholder="Tweete sua resposta"
             className="bg-background flex-1 border-0 text-base font-medium mt-8 resize-none focus:outline-none placeholder:text-gray-primary"
+            value={newAnswer}
+            onKeyDown={handleHotKeySubmit}
+            onChange={(event) => setNewAnswer(event.target.value)}
           />
         </label>
         <button
