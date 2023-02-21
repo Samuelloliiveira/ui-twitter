@@ -8,6 +8,7 @@ import {
   House,
   User
 } from 'phosphor-react'
+import { Link, NavLink } from 'react-router-dom'
 
 import twitterLogo from '../assets/logo-twitter.svg'
 
@@ -21,62 +22,62 @@ export function Sidebar() {
       />
 
       <nav className="flex flex-col gap-8">
-        <a
-          href=""
-          className="flex items-center gap-5 text-xl no-underline text-blue-primary"
+        <NavLink
+          to="/"
+          className="flex items-center gap-5 text-xl no-underline"
         >
           <House size={25} weight="fill" />
           Home
-        </a>
-        <a
-          href=""
+        </NavLink>
+        <Link
+          to="#"
           className="flex items-center gap-5 text-xl no-underline"
         >
           <Hash size={25} />
           Explore
-        </a>
-        <a
-          href=""
+        </Link>
+        <Link
+          to="#"
           className="flex items-center gap-5 text-xl no-underline"
         >
           <Bell size={25} />
           Notifications
-        </a>
-        <a
-          href=""
+        </Link>
+        <Link
+          to="#"
           className="flex items-center gap-5 text-xl no-underline"
         >
           <Envelope size={25} />
           Messages
-        </a>
-        <a
-          href=""
+        </Link>
+        <Link
+          to="#"
           className="flex items-center gap-5 text-xl no-underline"
         >
           <BookmarkSimple size={25} />
           Bookmarks
-        </a>
-        <a
-          href=""
+        </Link>
+        <Link
+          to="#"
           className="flex items-center gap-5 text-xl no-underline"
         >
           <FileText size={25} />
           Lists
-        </a>
-        <a
-          href=""
+        </Link>
+        <Link
+          to="#"
           className="flex items-center gap-5 text-xl no-underline"
         >
           <User size={25} />
           Profile
-        </a>
-        <a
-          href=""
+        </Link>
+        <Link
+          to="#"
           className="flex items-center gap-5 text-xl no-underline"
         >
           <DotsThreeCircle size={25} />
           More
-        </a>
+        </Link>
       </nav>
 
       <button
@@ -87,3 +88,5 @@ export function Sidebar() {
     </aside >
   )
 }
+
+// Contexto -> Existe locais no React que conseguimos ter acessos a informações e em outros não.
