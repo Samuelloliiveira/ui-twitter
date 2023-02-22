@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/base": "^5.0.0-alpha.118",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "phosphor-react": "^1.4.1",

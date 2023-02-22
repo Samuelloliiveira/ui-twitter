@@ -1,4 +1,5 @@
 import { FormEvent, KeyboardEvent, useState } from 'react'
+import { TextareaAutosize } from '@mui/base'
 
 import { Header } from '../components/Header'
 import { Separator } from '../components/Separator'
@@ -44,9 +45,11 @@ export function Timeline() {
             alt="Samuel Oliveira"
             className="w-12 h-12 rounded-full"
           />
-          <textarea
+
+          <TextareaAutosize
+            className="bg-background flex-1 border-0 font-medium mt-3 resize-none focus:outline-none placeholder:text-gray-primary"
+            maxLength={280}
             placeholder="O que está acontecendo?"
-            className="bg-background flex-1 border-0 text-base font-medium mt-3 resize-none focus:outline-none placeholder:text-gray-primary"
             value={newTweet}
             onKeyDown={handleHotKeySubmit}
             onChange={(event) => setNewTweet(event.target.value)}

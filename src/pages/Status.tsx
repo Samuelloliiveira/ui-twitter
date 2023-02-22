@@ -1,3 +1,4 @@
+import { TextareaAutosize } from '@mui/base'
 import { PaperPlaneRight } from 'phosphor-react'
 import { FormEvent, KeyboardEvent, useState } from 'react'
 
@@ -36,18 +37,20 @@ export function Status() {
       <Separator />
 
       <form
-        className="py-6 px-5 flex items-center border-b border-gray-secondary gap-2"
+        className="py-6 px-5 flex items-end border-b border-gray-secondary gap-2"
         onSubmit={createNewAnswer}
       >
-        <label className="flex flex-1 items-center gap-3">
+        <label className="flex flex-1 gap-3">
           <img
             src="https://avatars.githubusercontent.com/u/53087945?v=4|"
             alt="Samuel Oliveira"
             className="w-12 h-12 rounded-full"
           />
-          <textarea
+
+          <TextareaAutosize
+            className="bg-background flex-1 border-0 font-medium mt-4 resize-none focus:outline-none placeholder:text-gray-primary"
+            maxLength={280}
             placeholder="Tweete sua resposta"
-            className="bg-background flex-1 border-0 font-medium mt-8 resize-none focus:outline-none placeholder:text-gray-primary"
             value={newAnswer}
             onKeyDown={handleHotKeySubmit}
             onChange={(event) => setNewAnswer(event.target.value)}
@@ -57,7 +60,7 @@ export function Status() {
           type="submit"
           className="ml-auto bg-blue-primary rounded-full py-3 px-6 text-white border-0 hover:brightness-90 max-md:p-3"
         >
-          <PaperPlaneRight size={25} className="md:hidden"/>
+          <PaperPlaneRight size={25} className="md:hidden" />
           <span className="font-black max-md:hidden">
             Responder
           </span>
