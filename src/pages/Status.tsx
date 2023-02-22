@@ -9,9 +9,9 @@ import { Tweet } from '../components/Tweet'
 export function Status() {
   const [newAnswer, setNewAnswer] = useState('')
   const [answers, setAnswers] = useState([
-    'Concordo...',
-    'Olha, faz sentido!',
-    'Parabéns pelo progresso.'
+    'Discordo...',
+    'Olha, vai ser uma discussão acalorada nos próximos anos kkkkk!',
+    'Isso está muito longe de acontecer, dificilmente ela tem a noção que o ser humano possui, apenas cospe código.'
   ])
 
   function createNewAnswer(event: FormEvent) {
@@ -32,7 +32,7 @@ export function Status() {
     <main>
       <Header title="Tweet" />
 
-      <Tweet content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore officia optio illo, asperiores numquam amet quis rem aspernatur assumenda consequuntur possimus vel. Assumenda mollitia dignissimos atque suscipit facere ab beatae!" />
+      <Tweet content="Um chatbot da OpenAI tem a pretensão de substituir o Google e alguns trabalhadores humanos no futuro" />
 
       <Separator />
 
@@ -67,12 +67,14 @@ export function Status() {
         </button>
       </form>
 
-      {answers.map(answer => {
-        return <Tweet
-          key={answer}
-          content={answer}
-        />
-      })}
+      <div className="overflow-y-auto h-[25rem] md:h-[32rem]">
+        {answers.map(answer => {
+          return <Tweet
+            key={answer}
+            content={answer}
+          />
+        })}
+      </div>
     </main>
   )
 }

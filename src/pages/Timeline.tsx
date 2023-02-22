@@ -8,13 +8,13 @@ import { Tweet } from '../components/Tweet'
 export function Timeline() {
   const [newTweet, setNewTweet] = useState('')
   const [tweets, setTweets] = useState([
-    'Meu primeiro tweet',
-    'Zeri e Irelia são as maiores',
-    'Vamos INTZ, volta a ganhar',
-    'Bem que poderia chover o resto da semana',
-    'Estudando o dia praticamente todo',
-    'Essa aplicação está ficnado massa',
-    'Quero conseguir logo minha primeira oportunidade na área'
+    'Em 1996, era registrado o domínio da rede social MySpace',
+    'WhatsApp estaria trabalhando em recurso para inscrição em newsletters',
+    'Microsoft está injetando anúncios enormes na página de download do Chrome para tentar convencer usuários a permanecerem no Edge',
+    'Ministério da Justiça bloqueia os dois maiores sites de pirataria de anime no Brasil',
+    'TikTok está supostamente usando tecnologias de “reconhecimento de emoções” para vender anúncios',
+    'Microsoft usa ChatGPT para controlar braços robóticos, drones e assistentes domésticos por meio de linguagem natural',
+    'Em 1986, era lançado o primeiro jogo da série The Legend of Zelda para o console NES, chamado de Nintendinho no Brasil. '
   ])
 
   function createNewTweet(event: FormEvent) {
@@ -65,12 +65,15 @@ export function Timeline() {
 
       <Separator />
 
-      {tweets.map(tweet => {
-        return <Tweet
-          key={tweet}
-          content={tweet}
-        />
-      })}
+      <div className="overflow-y-auto h-[40rem] md:h-[39rem]">
+        {tweets.map(tweet => {
+          return <Tweet
+            key={tweet}
+            content={tweet}
+          />
+        })}
+      </div>
+
     </main>
   )
 }
