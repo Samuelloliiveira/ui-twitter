@@ -67,7 +67,7 @@ export function Status() {
         </button>
       </form>
 
-      <div className="overflow-y-auto h-[25rem] md:h-[32rem]">
+      <div className="overflow-y-auto h-[30rem] md:h-[33rem]">
         {answers.map(answer => {
           return <Tweet
             key={answer}

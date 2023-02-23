@@ -17,6 +17,10 @@ body * {
   font: 400 1rem Roboto, sans-serif;
 }
 
+div::-webkit-scrollbar {
+  width: 0px;
+}
+
 .active {
   color: #1DA1F2;
 }
